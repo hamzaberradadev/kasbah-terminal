@@ -21,7 +21,6 @@ private:
 	unsigned numero;
 	std::string adress;
 	std::string email;
-	std::map<unsigned, Transaction*> historique;
-private:
+
 	
 };

@@ -142,8 +142,10 @@
     <ClCompile Include="clients.cpp" />
     <ClCompile Include="gestionclient.cpp" />
     <ClCompile Include="gestionHistorique.cpp" />
+    <ClCompile Include="gestionProduit.cpp" />
     <ClCompile Include="gestionTransactions.cpp" />
     <ClCompile Include="gestionUtilisateur.cpp" />
+    <ClCompile Include="historique.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="transaction.cpp" />
     <ClCompile Include="utilisateur.cpp" />
@@ -153,8 +155,11 @@
     <ClInclude Include="clients.h" />
     <ClInclude Include="gestionclient.h" />
     <ClInclude Include="gestionHistorique.h" />
+    <ClInclude Include="gestionProduit.h" />
     <ClInclude Include="gestionTransactions.h" />
     <ClInclude Include="gestionUtilisateur.h" />
+    <ClInclude Include="utile.h" />
+    <ClInclude Include="historique.h" />
     <ClInclude Include="transaction.h" />
     <ClInclude Include="utilisateur.h" />
   </ItemGroup>
