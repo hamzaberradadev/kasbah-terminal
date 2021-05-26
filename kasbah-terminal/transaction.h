@@ -6,6 +6,7 @@
 #include <chrono>
 #include <ctime> 
 #include "Article.h"
+#include"utile.h"
 
 
 class Transaction
@@ -23,13 +24,14 @@ public:
 	double getTaxes();
 	std::string getdate();
 private:
-	unsigned idClient;
-	unsigned idMarchand;
-	unsigned idTransaction;
-	std::map<unsigned, unsigned> listeProduit;//<idProduit, nombre_de_produit>
-	double sousTotal;
-	double taxes;
-	std::string date;
+	unsigned idClient_;
+	unsigned idMarchand_;
+	unsigned idTransaction_;
+	std::map<unsigned, unsigned> listeProduit_;//<idProduit, nombre_de_produit>
+	double sousTotal_;
+	double taxes_;
+	std::string dateS_;
+	Date date_;
 
 };
 

@@ -16,11 +16,11 @@ public:
 	void setMail(std::string mail);
 	void setaddress(std::string adress);
 private:
-	std::string nom;
+	std::string nom_;
 	unsigned id;
-	unsigned numero;
-	std::string adress;
-	std::string email;
+	unsigned numero_;
+	std::string adress_;
+	std::string email_;
 
 	
 };

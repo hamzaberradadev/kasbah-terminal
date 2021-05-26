@@ -12,16 +12,17 @@ private:
 	double getCoup();
 	double getML();
 	unsigned getStock();
+	void setStock(unsigned stock);
+	void addToStock(unsigned qt);
 public:
 	std::string nom_;
 	unsigned id_;
 	unsigned type_;
 	double prix_;
 	double Solde;
-	
 	double coup_;
 	double multiplicateurLivraison_;
-	unsigned stock;
+	unsigned stock_;
 
 };
 
