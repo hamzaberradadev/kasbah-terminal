@@ -11,6 +11,8 @@ public:
 	Client* getClientByNum(unsigned num);
 	Client* getClientByEmail(std::string email);
 	Client* getClientByNam(std::string nam);
+	void addClient(Client);
+	void addClient(std::string nom, unsigned numero, std::string adress, std::string email);
 
 private:
 	std::map<unsigned, Client*> clientsId_;// sort by id

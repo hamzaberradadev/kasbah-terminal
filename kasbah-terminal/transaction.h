@@ -1,3 +1,5 @@
+#ifndef Transaction_H
+#define Transaction_H
 #include<vector>
 #include<map>
 #include <iostream>
@@ -6,7 +8,7 @@
 #include "Article.h"
 
 
-class Transaction 
+class Transaction
 {
 public:
 	Transaction(unsigned Idmarchand);
@@ -31,3 +33,4 @@ private:
 
 };
 
+#endif

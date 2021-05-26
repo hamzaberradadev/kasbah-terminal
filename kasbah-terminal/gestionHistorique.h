@@ -9,10 +9,11 @@
 class gestionHistorique
 {
 public:
-	gestionHistorique();
+	gestionHistorique(std::string soursPath);
 	~gestionHistorique();
-
-
+	std::vector<historique*> gethistoriqueGain();
+	std::vector<historique*> gethistoriquedeboursement();
+	historique getHistoriqueById(unsigned id);
 private:
 	std::vector<historique> hitoriques_;
 	std::vector<historique*>historiqueGain;

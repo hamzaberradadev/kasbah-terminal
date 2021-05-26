@@ -10,6 +10,9 @@ public:
 	gestionProduit(std::string soursPath);
 	Article* getArticleByid(unsigned id);
 	Article* getArticleByName(std::string nam);
+	void addArticle(Article article);
+	void addArticle(std::string nom, unsigned type, double prix, double coup, double multiplicateurLivraison);
+
 
 
 private:
