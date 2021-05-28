@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable : 4996)
 #include<ctime>
 #include <stdio.h>
 #include<string>
@@ -11,14 +12,13 @@ class Time
 public:
 	Time()
 	{
-		time_t secondes;
-		struct tm instant;
-
-		time(&secondes);
-		instant = *localtime(&secondes);
-		date_.year_ = instant.tm_year + 1;
-		date_.month_ = instant.tm_mon + 1;
-		date_.day_ = instant.tm_mday + 1;
+		time_t now;
+		// Renvoie l'heure actuelle
+		time(&now);
+		struct tm* local = localtime(&now);
+		date_.year_ = local->tm_year + 1900;
+		date_.month_ = local->tm_mon + 1;
+		date_.day_ = local->tm_mday;
 	}
 	Time(Date date)
 	{
@@ -28,8 +28,11 @@ public:
 	};
 
 
-	unsigned getIdFromtime() {
-		return(((date_.year_ - 2000) * 1000000) + (date_.month_ * 10000) + date_.day_ * 100) + 100 + (int)((float)rand() / (RAND_MAX - 1));
+	static long unsigned getIdFromtime() {
+		time_t now;
+		time(&now);
+		struct tm* local = localtime(&now);
+		return(((local->tm_year-100) * 100000000) + ((local->tm_mon+1) * 1000000) + (local->tm_mday * 10000) + ( ((local->tm_min+1)*(local->tm_hour+1))*(local->tm_sec+1)));
 	};
 	std::string getDateString() { return std::to_string(date_.year_) + "/" + std::to_string(date_.month_) + "/" + std::to_string(date_.day_); };
 	Date getdate() { return date_; }
