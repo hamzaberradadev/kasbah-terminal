@@ -1,15 +1,16 @@
+#pragma once
 #include <string>
-#include<map>
-#include"transaction.h"
 #include"Article.h"
 
 
 class Client {
 public:
-	Client(std::string nom, unsigned numero, std::string adress, std::string email);
+	Client() : id_(0) {};
+	Client(std::string nom, std::string numero, std::string adress, std::string email);
+	Client(unsigned id, std::string nom, std::string numero, std::string adress, std::string email);
 	std::string getnom();
 	unsigned getid();
-	unsigned getnumero();
+	std::string getnumero();
 	std::string getadress();
 	std::string getemail();
 	void setNum(unsigned num);
@@ -17,10 +18,11 @@ public:
 	void setaddress(std::string adress);
 private:
 	std::string nom_;
-	unsigned id;
-	unsigned numero_;
+	unsigned id_;
+	std::string numero_;
 	std::string adress_;
 	std::string email_;
+	double solde=0;
 
 	
 };

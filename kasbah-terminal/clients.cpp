@@ -1,14 +1,25 @@
 #include "clients.h"
 #include"utile.h"
-Client::Client(std::string nom, unsigned numero, std::string adress, std::string email)
+
+
+Client::Client(std::string nom,std::string numero, std::string adress, std::string email)
 {
 	Time tm;
 	nom_ = nom;
 	numero_ = numero;
 	adress_ = adress;
 	email_ = email;
-	id = tm.getIdFromtime();
+	id_ = tm.getIdFromtime();
 }
+Client::Client(unsigned id, std::string nom, std::string numero, std::string adress, std::string email)
+{
+	nom_ = nom;
+	numero_ = numero;
+	adress_ = adress;
+	email_ = email;
+	id_ = id;
+}
+;
 
 std::string Client::getnom()
 {
@@ -17,10 +28,10 @@ std::string Client::getnom()
 
 unsigned Client::getid()
 {
-	return id;
+	return id_;
 }
 
-unsigned Client::getnumero()
+std::string Client::getnumero()
 {
 	return numero_;
 }

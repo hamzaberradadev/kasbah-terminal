@@ -1,14 +1,14 @@
 #pragma once
 #include<string>
-class Historique
+class historique
 {
 public:
-	Historique(double monton, bool deboursement, std::string description) :
-		monton_(monton),
+	historique(unsigned long monton, bool deboursement, std::string description) :
+		montonX100_(monton),
 		deboursement_(deboursement),
 		description_(description)
 	{};
-	double monton_;
+	unsigned long montonX100_;
 	bool deboursement_;
 	std::string description_;
 

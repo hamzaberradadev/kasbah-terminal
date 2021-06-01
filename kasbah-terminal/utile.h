@@ -28,7 +28,7 @@ public:
 	};
 
 
-	static long unsigned getIdFromtime() {
+	static unsigned getIdFromtime() {
 		time_t now;
 		time(&now);
 		struct tm* local = localtime(&now);

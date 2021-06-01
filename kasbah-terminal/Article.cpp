@@ -1,6 +1,17 @@
 #include"Article.h"
 #include"utile.h"
 
+Article::Article(std::string nom, unsigned type, double prix, double coup, double multiplicateurLivraison)
+{
+	
+	nom_ = nom;
+	type_ = type;
+	prix_ = prix;
+	coup_ = coup;
+	multiplicateurLivraison_ = multiplicateurLivraison;
+	id_ = Time::getIdFromtime();
+};
+
 void Article::changePrix(double prix)
 {
 	this->prix_ = prix;
@@ -54,13 +65,3 @@ void Article::addToStock(unsigned qt)
 	stock_ += qt;
 }
 
-Article::Article(std::string nom, unsigned type, double prix, double coup, double multiplicateurLivraison)
-{
-	Time tm;
-	nom_ = nom;
-	type_ = type;
-	prix_ = prix;
-	coup_ = coup;
-	multiplicateurLivraison_ = multiplicateurLivraison;
-	id_ = tm.getIdFromtime();
-};

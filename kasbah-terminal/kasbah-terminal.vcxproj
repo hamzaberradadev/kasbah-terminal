@@ -159,14 +159,10 @@
     <ClInclude Include="gestionProduit.h" />
     <ClInclude Include="gestionTransactions.h" />
     <ClInclude Include="gestionUtilisateur.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="utile.h" />
     <ClInclude Include="historique.h" />
     <ClInclude Include="transaction.h" />
     <ClInclude Include="utilisateur.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="kasbah-terminal.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

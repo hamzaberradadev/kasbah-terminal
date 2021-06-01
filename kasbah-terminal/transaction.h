@@ -1,12 +1,13 @@
 #ifndef Transaction_H
 #define Transaction_H
-#include<vector>
-#include<map>
+#pragma once
+#include <vector>
+#include <map>
 #include <iostream>
-#include <chrono>
-#include <ctime> 
+#include <algorithm> 
 #include "Article.h"
-#include"utile.h"
+#include "clients.h"
+#include "utile.h"
 
 
 class Transaction
@@ -15,7 +16,7 @@ public:
 	Transaction(unsigned Idmarchand);
 	void addarticle(Article article, unsigned nombre);
 	bool delitArticle(Article article, unsigned nombre);
-	void setIdClient(unsigned idClient);
+	void payer(Client a);
 	unsigned getIdC();
 	unsigned getIdM();
 	unsigned getIdT();

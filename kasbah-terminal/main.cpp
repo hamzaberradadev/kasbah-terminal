@@ -1,7 +1,11 @@
 #include<string>
-//#include"gestionclient.h"
+#include"gestionclient.h"
 //#include"gestionTransactions.h"
 //#include"gestionUtilisateur.h"
+#include"Article.h"
+#include"clients.h"
+#include"transaction.h"
+#include"utilisateur.h"
 #include <iostream>
 #include <ctime>
 #include"utile.h"
@@ -10,11 +14,21 @@
 
 int main()
 {
-	Time date;
-	for (size_t i = 0; i < 10000; i++)
-	{
-		std::cout << std::to_string(date.getIdFromtime())<< std::endl;
+	//Article bijou ("bijou",1,9.99,6.87,2);
+	//Utilisateur utilisa("ab","mom",false);
+	//Transaction transaction(utilisa.Id_);
+	Client client("hamza", "4384084283", "blabla", "blabla");
+	gestionClient gC("C:/Users/5hamz/OneDrive/Documents/MEGAsync/kasbah/clients.txt");
+	//gC.addClient(client);
+	//gC.addClient("mohamed","34839328","blabla","lablab");
+	if (gC.getClientByNam("hamza").getid() == 0) 
+	{ 
+		std::cout << false;
 	}
-	std::cout<<std::to_string(date.getIdFromtime());
-	return 0;
+	else
+	{
+		std::cout << true;
+	}
+	
+
 };

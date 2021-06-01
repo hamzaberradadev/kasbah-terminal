@@ -2,7 +2,7 @@
 #include<string>
 
 class Article {
-private:
+public:
 	Article(std::string nom, unsigned type, double prix, double coup, double multiplicateurLivraison);
 	void changePrix(double prix);
 	void changeCoup(double coup);
@@ -14,7 +14,7 @@ private:
 	unsigned getStock();
 	void setStock(unsigned stock);
 	void addToStock(unsigned qt);
-public:
+private:
 	std::string nom_;
 	unsigned id_;
 	unsigned type_;
