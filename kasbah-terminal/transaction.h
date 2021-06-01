@@ -14,9 +14,13 @@ class Transaction
 {
 public:
 	Transaction(unsigned Idmarchand);
-	void addarticle(Article article, unsigned nombre);
-	bool delitArticle(Article article, unsigned nombre);
+	Transaction(unsigned id,unsigned idclient, unsigned Idmarchand, Date date, std::map<unsigned,unsigned> products);
+	void addarticle(Article& article, unsigned nombre);
+	void addarticle(unsigned article, unsigned nombre);
+	bool delitArticle(Article& article, unsigned nombre);
+	bool delitArticle(unsigned article, unsigned nombre);
 	void payer(Client a);
+	void payer(unsigned client);
 	unsigned getIdC();
 	unsigned getIdM();
 	unsigned getIdT();

@@ -8,7 +8,7 @@ Transaction::Transaction(unsigned Idmarchand)
 	idMarchand_ = Idmarchand;
 }
 
-void Transaction::addarticle(Article article, unsigned nombre)
+void Transaction::addarticle(Article& article, unsigned nombre)
 {
 	if (listeProduit_.find(article.getId()) == listeProduit_.end()) {
 		listeProduit_[article.getId()] = nombre;
@@ -21,7 +21,7 @@ void Transaction::addarticle(Article article, unsigned nombre)
 	sousTotal_ += article.getPrix() * nombre;
 }
 
-bool Transaction::delitArticle(Article article, unsigned nombre)
+bool Transaction::delitArticle(Article& article, unsigned nombre)
 {
 	if (listeProduit_.find(article.getId()) == listeProduit_.end()) {
 		return false;

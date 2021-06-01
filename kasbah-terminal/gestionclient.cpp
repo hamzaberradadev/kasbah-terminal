@@ -52,6 +52,16 @@ Client gestionClient::getClientById(unsigned id)
 	return clientsId_[id];
 }
 
+Client gestionClient::getClientByNum(std::string num)
+{
+	return clientsNum_[num];
+}
+
+Client gestionClient::getClientByEmail(std::string email)
+{
+	return clientsEmail_[email];
+}
+
 Client gestionClient::getClientByNam(std::string nam)
 {
 	if (clientsNam_.find(nam) == clientsNam_.end())

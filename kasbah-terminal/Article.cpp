@@ -10,7 +10,18 @@ Article::Article(std::string nom, unsigned type, double prix, double coup, doubl
 	coup_ = coup;
 	multiplicateurLivraison_ = multiplicateurLivraison;
 	id_ = Time::getIdFromtime();
-};
+}
+Article::Article(unsigned id, std::string nom, unsigned type, unsigned prix, unsigned coup, unsigned multiplicateurLivraison, unsigned nbr)
+{
+	nom_ = nom;
+	type_ = type;
+	prix_ = prix/100;
+	coup_ = coup/100;
+	multiplicateurLivraison_ = multiplicateurLivraison/100;
+	stock_ = nbr;
+	id_ = id;
+}
+;
 
 void Article::changePrix(double prix)
 {
@@ -63,5 +74,10 @@ void Article::setStock(unsigned stock)
 void Article::addToStock(unsigned qt)
 {
 	stock_ += qt;
+}
+
+unsigned Article::getType()
+{
+	return type_;
 }
 
