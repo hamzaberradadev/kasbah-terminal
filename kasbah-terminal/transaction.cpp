@@ -6,17 +6,35 @@ Transaction::Transaction(unsigned Idmarchand)
 	dateS_ = tm.getDateString();
 	date_ = tm.getdate();
 	idMarchand_ = Idmarchand;
+	idClient_ = 0;
+	idTransaction_ = tm.getIdFromtime();
+	sousTotal_ = 0;
+}
+
+Transaction::Transaction(unsigned id, unsigned idclient, unsigned Idmarchand, Date date,unsigned st, std::map<unsigned, unsigned>& products)
+{
+	Time tm(date);
+	idTransaction_ = id;
+	idClient_ = idclient;
+	idMarchand_ = Idmarchand;
+	date_ = date;
+	dateS_ = tm.getDateString();
+	sousTotal_ = st;
+
+	for (auto it : products) {
+		listeProduit_[it.first] = it.second;
+	}
+
 }
 
 void Transaction::addarticle(Article& article, unsigned nombre)
 {
 	if (listeProduit_.find(article.getId()) == listeProduit_.end()) {
 		listeProduit_[article.getId()] = nombre;
-		
 	}
 	else
 	{
-		listeProduit_[article.getId()] += nombre;
+		listeProduit_[article.getId()] = listeProduit_[article.getId()] + nombre;
 	}
 	sousTotal_ += article.getPrix() * nombre;
 }
@@ -75,9 +93,19 @@ double Transaction::getS_T()
 	return sousTotal_;
 }
 
-double Transaction::getTaxes()
+//double Transaction::getTaxes()
+//{
+//	return taxes_;
+//}
+
+Date Transaction::getDate()
 {
-	return taxes_;
+	return date_;
+}
+
+std::map<unsigned, unsigned>& Transaction::getMapProd()
+{
+	return this->listeProduit_;
 }
 
 std::string Transaction::getdate()

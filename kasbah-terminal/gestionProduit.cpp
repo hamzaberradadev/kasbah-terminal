@@ -9,8 +9,6 @@ gestionProduit::gestionProduit(std::string soursPath)
 		unsigned position = 0;
 		while (!sourse.eof())
 		{
-
-			
 			std::string ligne;
 			std::getline(sourse, ligne);
 			std::string delimiter = " ";
@@ -35,8 +33,8 @@ gestionProduit::gestionProduit(std::string soursPath)
 				unsigned f = std::stoul(token[6], &f, 10);
 				Article art(a, token[1], b, c, d, e, f);
 				articles_.push_back(art);
-				idToLigne[a] = pos;
-				pos++;
+				idToLigne[a] = position;
+				position++;
 			}
 
 		}
@@ -80,7 +78,6 @@ gestionProduit::~gestionProduit()
 		}
 		sourse << "fin";
 	}
-
 }
 
 Article* gestionProduit::getArticleByName(std::string nam)

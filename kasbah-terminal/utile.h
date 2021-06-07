@@ -22,7 +22,7 @@ public:
 	}
 	Time(Date date)
 	{
-		date.year_ = date.year_;
+		date_.year_ = date.year_;
 		date_.month_ = date.month_;
 		date_.day_= date.day_;
 	};
@@ -49,7 +49,8 @@ public:
 		struct tm* local = localtime(&now);
 		return(((local->tm_year-100) * 100000000) + ((local->tm_mon+1) * 1000000) + (local->tm_mday * 10000) + ( ((local->tm_min+1)*(local->tm_hour+1))*(local->tm_sec+1)));
 	};
-	std::string getDateString() { return std::to_string(date_.year_) + "/" + std::to_string(date_.month_) + "/" + std::to_string(date_.day_); };
+	std::string getDateString() 
+	{ return std::to_string(date_.year_) + "/" + std::to_string(date_.month_) + "/" + std::to_string(date_.day_); };
 	Date getdate() { return date_; }
 	Date date_;
 };
