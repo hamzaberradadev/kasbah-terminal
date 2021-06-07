@@ -32,9 +32,9 @@ public:
 		time_t now;
 		time(&now);
 		struct tm* local = localtime(&now);
-		double long nbrmoiForid = (double long(local->tm_year) - 100 - round(id / 100000000)) * 12;
-		nbrmoiForid += -static_cast<double long>(local->tm_mon + 1) + round(id / 1000000) - round(id / 100000000);
-		if (nbrmoiForid>=0)
+		double long nbrMoiForId = (double long(local->tm_year) - 100 - round(id / 100000000)) * 12;
+		nbrMoiForId += -static_cast<double long>(local->tm_mon + static_cast < double long>(1)) + round(id / 1000000) - round(id / 100000000);
+		if (nbrMoiForId >=0)
 		{
 			return true;
 		}

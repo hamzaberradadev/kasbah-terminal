@@ -3,7 +3,7 @@
 #include"gestionHistorique.h"
 #include"gestionProduit.h"
 #include"gestionTransactions.h"
-//#include"gestionUtilisateur.h"
+#include"gestionUtilisateur.h"
 #include"Article.h"
 #include"clients.h"
 #include"transaction.h"
@@ -16,7 +16,7 @@
 int main()
 {
 	Article bijou ("bijou",1,9.99,6.87,2);
-	Utilisateur utilisa("ab","mom",false);
+	Utilisateur utilisa(20028,"ab","mom",true);
 	Transaction transaction(utilisa.Id_);
 	Client client("hamza", "4384084283", "blabla", "blabla");
 	//gestionClient gC("C:/Users/5hamz/OneDrive/Documents/MEGAsync/kasbah/clients.txt");
@@ -29,10 +29,13 @@ int main()
 	//gP.addArticle(bijou,unsigned (3));
 	//std::string nom, unsigned type, double prix, double coup, double multiplicateurLivraison
 	//std::cout << gP.getArticleByName(bijou.getNom())->getPrix();
-	GestionTransaction gT("C:/Users/5hamz/OneDrive/Documents/MEGAsync/kasbah/transactions.txt");
+	//GestionTransaction gT("C:/Users/5hamz/OneDrive/Documents/MEGAsync/kasbah/transactions.txt");
 	//gT.addTrans(transaction);
-	gT.getTransactionByid(2106070290)->addarticle(bijou,3);
-	gT.actualiserTr(2106070290);
-	
+	//gT.getTransactionByid(2106070290)->addarticle(bijou,3);
+	//gT.actualiserTr(2106070290);
+	GestionUtilisateur gU("C:/Users/5hamz/OneDrive/Documents/MEGAsync/kasbah/utilisateurs.txt");
+	gU.addUtilisateur(utilisa);
+	std::cout<<gU.getUtilisateurById(utilisa.Id_)->verifierMdp("ab");
+
 
 };

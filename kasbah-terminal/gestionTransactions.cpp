@@ -28,8 +28,8 @@ GestionTransaction::GestionTransaction(std::string soursPath)
 					pos = ligne.find(delimiter);
 					toke[1] = ligne.substr(0, pos);
 					ligne.erase(0, pos + delimiter.length());
-					unsigned a = std::stoull(toke[0], &a, 10);
-					unsigned b = std::stoull(toke[1], &b, 10);
+					unsigned a = std::stoul(toke[0], &a, 10);
+					unsigned b = std::stoul(toke[1], &b, 10);
 					products[a] = b;
 				}
 
@@ -90,7 +90,7 @@ GestionTransaction::~GestionTransaction()
 	}
 		//add 
 		std::ofstream sourse(soursPath_, std::ios::out);
-		sourse << Buffer << std::endl;
+		sourse << Buffer;
 		for (Transaction* tr : toBeAdded_)
 
 		{ ////unsigned id , unsigned idclient  , unsigned Idmarchand , Date date , std::map<unsigned,unsigned> products
